@@ -1,0 +1,77 @@
+<template>
+	<div class="header">
+		<div class="header-theme" :class="theme">
+			<div class="header-container">
+				<div class="menu-item" @click="goIndex()">
+					<u-icon class="menus-index" name="grid-fill" :color="theme==='light'?'#606266':'#ffffff'"
+						size="30px"></u-icon>
+				</div>
+				<div class="menu-item">
+					<span>店员：{{userName}}</span>
+				</div>
+			</div>
+		</div>
+	</div>
+</template>
+
+<script>
+	export default {
+		props: {
+			theme: {
+				type: String,
+				default: 'light'
+			}
+		},
+		data() {
+			return {
+				userName: ''
+			}
+		},
+		created() {
+			this.userName = this.$store.state.$userInfo?.name || ''
+		},
+		methods: {
+			goIndex() {
+				uni.navigateTo({
+					url: '/pages/cashier/cashier'
+				})
+			}
+		}
+	}
+</script>
+
+<style lang="scss" scoped>
+	.header {
+		position: sticky;
+		inset-block-start: 0;
+		z-index: 3;
+		top: 0;
+
+		.header-theme.light {
+			background: #ffffff !important;
+			color: #606266 !important;
+		}
+
+		.header-theme.dark {
+			background-color: rgba(37, 38, 40, .21);
+			background-image: radial-gradient(circle at 25%, hsla(0, 0%, 100%, .2), rgba(50, 50, 50, .2) 80%);
+			backdrop-filter: blur(14px);
+			color: #ffffff !important;
+		}
+
+		.header-container {
+			display: flex;
+			flex-flow: row;
+			flex-wrap: nowrap;
+			align-items: center;
+			justify-content: space-between;
+			padding: 0 32px;
+			font-size: 16px;
+			height: 60px;
+		}
+
+		.menu-item {
+			cursor: pointer;
+		}
+	}
+</style>

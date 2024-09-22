@@ -1,0 +1,189 @@
+.login-container {
+	position: relative;
+	margin: 0;
+	padding: 0;
+	width: 100%;
+	height: 100%;
+}
+
+.auth-bg {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: $m-bg-color;
+	background-image: url('https://gw.alipayobjects.com/zos/rmsportal/TVYTbAXWheQpRcWDaDMu.svg');
+	background-size: 100%;
+	background-repeat: no-repeat;
+}
+
+.auth-body {
+	position: absolute;
+	display: flex;
+	flex-flow: row;
+	justify-content: center;
+	align-items: center;
+	width: 100%;
+	height: 100%;
+}
+
+.common-layout {
+	width: 400px;
+}
+
+.login-title {
+	display: flex;
+	flex-flow: row;
+	align-items: center;
+	justify-content: space-around;
+	text-align: center;
+	padding: 22px 12px;
+
+	.logo {
+		display: flex;
+		flex-flow: row;
+		justify-content: center;
+		align-items: center;
+
+		.logo-img {
+			margin-right: 6px;
+			border-radius: 10px;
+		}
+
+		.logo-title {
+			font-size: 30px;
+			line-height: 32px;
+			color: $m-main-color;
+			font-weight: 500;
+		}
+	}
+
+	.line {
+		font-size: 20px;
+		color: $m-border-color;
+	}
+
+	.desc {
+		font-size: 20px;
+		color: $m-main-color;
+	}
+}
+
+.content {
+	position: relative;
+	background-color: $m-white-color;
+	border: 1rpx solid $m-border-color;
+	border-radius: 10px;
+	box-shadow: 0 8px 32px 0 $m-shadow-color;
+
+	.login {
+		position: relative;
+		display: flex;
+		flex-direction: column;
+		padding: 30px;
+
+		.login-form {
+			padding-top: 32rpx;
+			flex: 1;
+		}
+
+		.login-foot {
+			display: flex;
+			flex-flow: row;
+			align-items: center;
+			color: $m-main-color;
+			border-top: 2rpx dashed $m-border-color;
+			padding: 13px 8px 0;
+			justify-content: space-between;
+
+			.u-text {
+				cursor: pointer;
+			}
+
+			.router-right {
+				justify-content: flex-end !important;
+			}
+		}
+	}
+
+	.login-tabs {
+		display: flex;
+		flex-flow: row;
+		align-items: center;
+		justify-content: left;
+		margin-top: 12px;
+		margin-bottom: 20px;
+
+		.login-tabs-line {
+			margin: 0 16px;
+			width: 1px;
+			height: 16px;
+			background: $m-border-color;
+		}
+
+		.login-tabs-item {
+			font-size: 20px;
+			color: $m-light-color;
+			font-weight: 400;
+			cursor: pointer;
+		}
+
+		.login-tabs-item.active {
+			color: $m-main-color;
+			font-weight: 600;
+		}
+	}
+
+	.login-type-icon {
+		display: flex;
+		flex-flow: row;
+		justify-content: center;
+		align-items: center;
+		position: absolute;
+		top: 20px;
+		right: -20px;
+		width: 90px;
+		height: 90rpx;
+		cursor: pointer;
+		z-index: 9;
+	}
+
+	.login-type-account-icon {
+		background: url('../../static/img/auth/account.png');
+		background-repeat: no-repeat;
+		background-size: 55%;
+	}
+
+	.login-type-account-icon:hover {
+		background: url('../../static/img/auth/account_hover.png');
+		background-repeat: no-repeat;
+		background-size: 55%;
+	}
+
+	.login-type-qrcode-icon {
+		background: url('../../static/img/auth/qrcode.png');
+		background-repeat: no-repeat;
+		background-size: 55%;
+	}
+
+	.login-type-qrcode-icon:hover {
+		background: url('../../static/img/auth/qrcode_hover.png');
+		background-repeat: no-repeat;
+		background-size: 55%;
+	}
+
+	.login-type-icon-bg {
+		position: absolute;
+		right: 0;
+		top: 0;
+		width: 90px;
+		height: 90px;
+		border-radius: 0 10px 0 0;
+		border-color: #e8f3ff #e8f3ff #fff #fff;
+		border-style: solid;
+		border-width: 50px;
+		-webkit-box-sizing: border-box;
+		box-sizing: border-box;
+	}
+}
